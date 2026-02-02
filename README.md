@@ -29,3 +29,7 @@ FROM (
     WHERE s.to_date > SYSDATE() 
 ) a;
 Through this project, I have proven that I can not only write complex SQL queries but also build the infrastructure that a modern data team needs to stay fast, accurate, and automated.
+
+## Related Projects
+- 🔗 SQL Sales Database Design  
+  https://github.com/nonyeobi-stack/SQL-Sales-Database-Design
