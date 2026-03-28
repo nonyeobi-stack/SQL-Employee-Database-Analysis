@@ -1,35 +1,50 @@
-# SQL-Employee-Database-Analysis
+# 📊 Employee Workforce Analysis Dashboard
 
-### **Project Overview**
-This project demonstrates my ability to manage and analyze a large-scale relational database containing over **300,000 employee records**. I have built a complete ecosystem that moves from raw data setup to advanced automated reporting tools.
+## 🖼️ Dashboard Preview
+![Dashboard](dashboard.<img width="1838" height="768" alt="Employeees_Report_dashboard" src="https://github.com/user-attachments/assets/60d2ef25-4df3-4535-be8e-bab446ca8a85" />
+png)
 
-### **Project Directory Structure**
-* **📂 Folder_01_Database_Setup**: Environment initialization and table structures.
-* **📂 Folder_02_Data_Exploration**: Auditing data volume and checking for missing values.
-* **📂 Folder_03_Advanced_Insights**: Ranking, salary benchmarking, and anomaly detection.
-* **📂 Folder_04_Database_Objects**: Views, Stored Procedures, UDFs, Triggers, and Indexes.
+---
 
-### **💡 Featured Insight: Automated Pay Equity Audit**
-I developed this query to automatically identify employees who fall outside the standard pay range (20% variance) for their specific department.
+## 🔍 About This Project
+In this project, I analyzed employee data to understand workforce trends, salary patterns, and how different departments are structured.
 
-```sql
-SELECT 
-    emp_no, dept_name, salary, avg_salary,
-    CASE 
-        WHEN salary > (avg_salary * 1.2) THEN 'Above Market'
-        WHEN salary < (avg_salary * 0.8) THEN 'Below Market'
-        ELSE 'Within Market Range'
-    END AS compensation_status
-FROM (
-    SELECT de.emp_no, d.dept_name, s.salary,
-           AVG(s.salary) OVER(PARTITION BY de.dept_no) AS avg_salary
-    FROM salaries s
-    JOIN dept_emp de ON s.emp_no = de.emp_no
-    JOIN departments d ON de.dept_no = d.dept_no
-    WHERE s.to_date > SYSDATE() 
-) a;
-Through this project, I have proven that I can not only write complex SQL queries but also build the infrastructure that a modern data team needs to stay fast, accurate, and automated.
+I used SQL to extract the data and Tableau to build an interactive dashboard that clearly shows key insights.
 
-## Related Projects
-- 🔗 SQL Sales Database Design  
-  https://github.com/nonyeobi-stack/SQL-Sales-Database-Design
+---
+
+## 🛠️ Tools Used
+- SQL (MySQL Workbench)
+- Tableau
+- Excel (for data export)
+
+---
+
+## 📊 What I Analyzed
+- Employee distribution (Male vs Female over time)
+- Salary trends across years
+- Number of managers per department
+- Average salary by department and gender
+
+---
+
+## 💡 Key Insights
+- The company experienced steady growth in employee count  
+- Salaries increased gradually over time  
+- Some departments have more managers than others  
+- There are slight salary differences across departments and gender  
+
+---
+
+## 🔗 View Dashboard
+👉 [https://public.tableau.com/app/profile/nonye.obi]
+
+---
+
+## 📌 What I Learned
+This project helped me improve my SQL querying, data analysis, and dashboard design skills. It also taught me how to present data in a way that supports decision-making.
+
+---
+
+## 🧠 SQL Queries
+All SQL queries used for this project are included in this repository.
